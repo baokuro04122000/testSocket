@@ -1,15 +1,19 @@
-import React from 'react';
-import 'antd/dist/antd.css';
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
-import TestSocket from './screens/testSocket';
- 
+import {useEffect} from 'react';
+import {useDispatch, useSelector} from 'react-redux';
+import RoutesAdmin from './screens/RoutesAdminScreen';
+import SignInScreen from './screens/SigninScreen';
+import {signout} from './actions/userActions';
 function App() {
+  const userSignin = useSelector(state=>state.userSignIn);
+  const {userInfo}=userSignin;
   return (
-    <Router>
-      <Switch>
-        <Route path="/" exact component={TestSocket} />
-      </Switch>
-    </Router>
+    <>
+      {userInfo ? (
+        <RoutesAdmin/>
+      ):(
+        <SignInScreen/>
+      )}
+    </>
   );
 }
 

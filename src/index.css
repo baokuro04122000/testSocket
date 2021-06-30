@@ -1,68 +1,117 @@
-body {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+@import '~antd/dist/antd.css';
+html{
+  font-size:62.5%; /* 16px x 62.5 = 10px = 1rem*/
+  box-sizing: border-box;
+}
+body{
+  margin:0;
+  height: 100vh;
+  font-size: 1.6rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
+  'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+  'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-.edit-form-login{
-  position: relative;
-  left: 50%;
-  top: 10%;
-}
-.login-form {
-  max-width: 300px;
-  transform: translateX(-50%);
-}
-.login-form-forgot {
-  float: right;
-}
-.ant-col-rtl .login-form-forgot {
-  float:left;
-}
-.login-form-button {
+#root{
+  height:100%;
   width: 100%;
 }
-span.anticon.anticon-menu-fold.trigger {
+.trigger {
   padding: 0 24px;
   font-size: 18px;
   line-height: 64px;
   cursor: pointer;
   transition: color 0.3s;
+  color: white;
 }
 
-span.anticon.anticon-menu-fold.trigger:hover {
+.trigger:hover {
   color: #1890ff;
 }
 
-span.anticon.anticon-menu-unfold.trigger {
-  padding: 0 24px;
-  font-size: 18px;
-  line-height: 64px;
-  cursor: pointer;
-  transition: color 0.3s;
-}
-span.anticon.anticon-menu-unfold.trigger:hover {
-  color: #1890ff;
-}
-#components-layout-demo-custom-trigger .logo {
+.logo {
   height: 32px;
   margin: 16px;
-  background: rgba(255, 255, 255, 0.3);
 }
 
-.site-layout .site-layout-background {
+.site-layout-background {
   background: #fff;
+  text-align: end;
 }
-#root{
+.edit-front-logo {
+  display: inline-block;
+  height: 32px;
+  margin: 0 0 0 12px;
+  color: #fff;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 32px;
+  vertical-align: middle;
+  animation: pro-layout-title-hide .3s;
+}
+.ant-pro-sider-logo {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  cursor: pointer;
+  transition: padding .3s cubic-bezier(.645,.045,.355,1);
+  overflow: hidden;
+}
+.ant-pro-sider-logo >a,
+.ant-pro-sider-logo-edit > a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 32px;
+}
+.ant-pro-sider-logo img{
+  display: inline-block;
+  height: 32px;
+  vertical-align: middle;
+}
+.ant-pro-sider-logo-edit img{
+  display: inline-block;
+  height: 32px;
+  vertical-align: middle;
+  margin-top:12px !important;
+}
+.ant-pro-sider-logo h1 {
+  display: inline-block;
+  height: 32px;
+  margin: 0 0 0 12px;
+  color: #fff;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 32px;
+  vertical-align: middle;
+  animation: pro-layout-title-hide .5s;
+  
+}
+.ant-pro-sider-logo-edit h1 {
+  display: none;
+}
+.ant-pro-sider-links{
+  display: block;
+  float: left;
+}
+.ant-pro-sider-links-edit{
   width: 100%;
-  height: 100%;
+}
+.edit-menu-antd{
+  margin: -4px 0px;
+}
+.edit-menu-antd-small{
+  margin: 15px 0px;
+}
+.edit-header-children{
+  margin-right: 20px;
+}
+.edit-input-type{
+  padding: 10px 0px;
+}
+@keyframes pro-layout-title-hide {
+  0% {display: none; visibility: hidden;  opacity: 0;}
+  100% {display: inline-block; visibility: visible; opacity: 1;}
 }
